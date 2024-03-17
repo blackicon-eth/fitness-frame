@@ -13,7 +13,7 @@ export function getFunFactFrame(randomId: string): NextResponse {
         action: "post",
       },
     ],
-    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/public/frames/fun_facts/${randomId}.jpg` },
+    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/frames/fun_facts/${randomId}.jpg` },
     post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/fun_fact`,
   });
 
@@ -40,7 +40,7 @@ export function getMainFrame(): NextResponse {
         action: "post",
       },
     ],
-    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/public/frames/front_image.jpg` },
+    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/frames/front_image.jpg` },
     post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/main`,
   });
 
@@ -55,7 +55,7 @@ export function getInvalidFIDFrame(): NextResponse {
         action: "post",
       },
     ],
-    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/public/frames/invalid_fid_image.jpg` },
+    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/frames/invalid_fid_image.jpg` },
     post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/start_over`,
   });
 
@@ -75,7 +75,7 @@ export function getMetricFrame(textPlaceholder: string, image: string, post_url:
         action: "post",
       },
     ],
-    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/public/frames/${image}.jpg` },
+    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/frames/${image}.jpg` },
     post_url: `${post_url}`,
   });
 

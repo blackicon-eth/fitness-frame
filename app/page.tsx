@@ -21,7 +21,7 @@ const frameMetadata = getFrameMetadata({
       action: "post",
     },
   ],
-  image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/public/frames/front_image.jpg` },
+  image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/frames/front_image.jpg` },
   post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/main`,
 });
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Fitness Frame",
     description: "A farcaster frame that lets you calculate some fitness metrics and check on fun facts.",
-    images: [`${process.env.NEXT_PUBLIC_BASE_URL}/public/frames/front_image.jpg`],
+    images: [`${process.env.NEXT_PUBLIC_BASE_URL}/frames/front_image.jpg`],
   },
   other: {
     ...frameMetadata,
