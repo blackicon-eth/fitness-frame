@@ -19,17 +19,13 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   // If the input is not valid
   if (!isValidTextInput) {
-    return getMetricFrame(
-      "Invalid input! Enter a valid weight (Kg)",
-      "weight_image",
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bmi/weight`
-    );
+    return getMetricFrame("Invalid input!", "weight_image", `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bmi/weight`);
   }
 
   // If the input is valid but out of range
   else if (isValidTextInput && (parseFloat(inputText) > 400 || parseFloat(inputText) < 20)) {
     return getMetricFrame(
-      "Enter a body weight (Kg) between 20 and 400, please",
+      "Enter weight between 20 and 400",
       "weight_image",
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bmi/weight`
     );
