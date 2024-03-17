@@ -5,7 +5,7 @@ import { localImageToFrame } from "./lib/generateImage";
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: "Calories Calculator",
+      label: "Kcals",
       action: "post",
     },
     {

@@ -10,7 +10,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   const buttonId = data.untrustedData.buttonIndex;
 
   // Start Over
-  if (buttonId === 2) {
+  if (buttonId === 1) {
     return getMainFrame();
   }
 
