@@ -24,7 +24,7 @@ export function getMainFrame(): NextResponse {
   const frame = getFrameHtmlResponse({
     buttons: [
       {
-        label: "Calories Calculator",
+        label: "Kcals",
         action: "post",
       },
       {
