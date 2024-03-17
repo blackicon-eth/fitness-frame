@@ -8,6 +8,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   // Getting the pressed button ID
   const buttonId = data.untrustedData.buttonIndex;
 
+  // Start Over
+  if (buttonId === 2) {
+    return getMainFrame();
+  }
+
   // Getting the text input
   const inputText = data.untrustedData.inputText;
   const isValidTextInput = !isNaN(inputText) && parseFloat(inputText) > 0;
@@ -31,18 +36,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 
   // Next
-  if (buttonId === 1) {
-    return getMetricFrame(
-      "What's your height? (Cm)",
-      "height_image",
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bmi/height?weight=${inputText}`
-    );
-  }
-
-  // Start Over
-  else {
-    return getMainFrame();
-  }
+  return getMetricFrame(
+    "What's your height? (Cm)",
+    "height_image",
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bmi/height?weight=${inputText}`
+  );
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
