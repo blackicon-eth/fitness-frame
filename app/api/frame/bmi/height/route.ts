@@ -9,6 +9,11 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   // Getting the pressed button ID
   const buttonId = data.untrustedData.buttonIndex;
 
+  // Start Over
+  if (buttonId === 2) {
+    return getMainFrame();
+  }
+
   // Getting the text input
   const inputText = data.untrustedData.inputText;
   const isValidTextInput = !isNaN(inputText) && parseFloat(inputText) > 0;
@@ -32,15 +37,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   }
 
   // Next
-  if (buttonId === 1) {
-    const calculatedBMI = (parseFloat(weight) / Math.pow(parseFloat(inputText) / 100, 2)).toFixed(1);
-    return getBMIFrame(calculatedBMI);
-  }
-
-  // Start Over
-  else {
-    return getMainFrame();
-  }
+  const calculatedBMI = (parseFloat(weight) / Math.pow(parseFloat(inputText) / 100, 2)).toFixed(1);
+  return getBMIFrame(calculatedBMI);
 }
 
 export async function POST(req: NextRequest): Promise<Response> {
