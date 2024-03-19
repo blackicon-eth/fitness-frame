@@ -19,7 +19,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   // Getting the text input
   const inputText = data.untrustedData.inputText;
-  const isValidTextInput = Number.isInteger(inputText) && parseInt(inputText) > 10 && parseInt(inputText) < 120;
+  const isValidTextInput =
+    !isNaN(inputText) && Number.isInteger(parseInt(inputText)) && parseInt(inputText) > 10 && parseInt(inputText) < 120;
 
   // If the input is not valid
   if (!isValidTextInput) {
