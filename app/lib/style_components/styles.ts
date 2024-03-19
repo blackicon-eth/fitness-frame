@@ -21,6 +21,6 @@ export const bfText = {
   textAlign: "center",
   color: "#fff",
   position: "absolute",
-  bottom: "330",
-  left: "750",
+  bottom: "320",
+  left: "730",
 };
