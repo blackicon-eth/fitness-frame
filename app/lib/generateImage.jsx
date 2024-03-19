@@ -38,7 +38,6 @@ export async function localImageToFrame(event, value) {
 
   // creating image for calculated bf
   else if (event == "bf") {
-    // TODO
     const imagePath = path.join(process.cwd(), "public/frames/bf_result.jpg");
     const buffer = fs.readFileSync(imagePath);
     const arrayBuffer = buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength);
@@ -64,15 +63,23 @@ export async function localImageToFrame(event, value) {
 
   // creating image for calories count
   else if (event == "cc") {
-    // TODO
-    const imagePath = path.join(process.cwd(), "public/frames/bmi_result.jpg");
+    const weightLoss = (parseInt(value) - 500).toString();
+    const mildWeightLoss = (parseInt(value) - 250).toString();
+    const weightGain = (parseInt(value) + 500).toString();
+    const mildWeightGain = (parseInt(value) + 250).toString();
+
+    const imagePath = path.join(process.cwd(), "public/frames/cc_result.jpg");
     const buffer = fs.readFileSync(imagePath);
     const arrayBuffer = buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength);
 
     const svg = await satori(
       <body>
         <img src={arrayBuffer} style={style.genericImage} />
-        <span style={style.totalValueStart}>{value}</span>
+        <span style={style.ccTextWeightGain}>{weightGain}</span>
+        <span style={style.ccTextMildWeightGain}>{mildWeightGain}</span>
+        <span style={style.ccTextWeight}>{value}</span>
+        <span style={style.ccTextMildWeightLoss}>{mildWeightLoss}</span>
+        <span style={style.ccTextWeightLoss}>{weightLoss}</span>
       </body>,
       {
         width: 1910,

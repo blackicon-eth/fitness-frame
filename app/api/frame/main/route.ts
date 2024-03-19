@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getInvalidFIDFrame, getFunFactFrame, getMetricFrame, getGenderFrame } from "@/app/lib/getFrame";
+import { getInvalidFIDFrame, getFunFactFrame, getMetricFrame, getGenderFrame, getKnowBFFrame } from "@/app/lib/getFrame";
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   // Getting the user fid and validating it
@@ -14,7 +14,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   // KCALS Calculator
   if (buttonId === 1) {
-    return getFunFactFrame("1");
+    return getKnowBFFrame("bf_know_image", `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/cc/bf_know`);
   }
 
   // BMI Calculator

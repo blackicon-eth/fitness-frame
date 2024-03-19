@@ -105,6 +105,29 @@ export function getGenderFrame(image: string, post_url: string): NextResponse {
   return new NextResponse(frame);
 }
 
+export function getKnowBFFrame(image: string, post_url: string): NextResponse {
+  const frame = getFrameHtmlResponse({
+    buttons: [
+      {
+        label: "Start Over",
+        action: "post",
+      },
+      {
+        label: "No idea!",
+        action: "post",
+      },
+      {
+        label: "Yes, I know it!",
+        action: "post",
+      },
+    ],
+    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/frames/${image}.jpg` },
+    post_url: `${post_url}`,
+  });
+
+  return new NextResponse(frame);
+}
+
 export function getBMIFrame(calculatedBMI: string): NextResponse {
   const frame = getFrameHtmlResponse({
     buttons: [
@@ -129,6 +152,21 @@ export function getBFFrame(calculatedBF: string): NextResponse {
       },
     ],
     image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/api/image?event=bf&value=${calculatedBF}` },
+    post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/start_over`,
+  });
+
+  return new NextResponse(frame);
+}
+
+export function getCCFrame(calculatedCalories: string): NextResponse {
+  const frame = getFrameHtmlResponse({
+    buttons: [
+      {
+        label: "Start Over",
+        action: "post",
+      },
+    ],
+    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/api/image?event=cc&value=${calculatedCalories}` },
     post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/start_over`,
   });
 

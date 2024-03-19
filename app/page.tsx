@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const image = await localImageToFrame("bf", "19.3");
+  const image = await localImageToFrame("cc", "2500");
   return (
     <>
       <h1>Fitness Frame</h1>
