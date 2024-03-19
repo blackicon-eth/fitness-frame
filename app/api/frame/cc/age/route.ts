@@ -24,7 +24,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   // If the input is not valid
   if (!isValidTextInput) {
     return getMetricFrame(
-      "Invalid input!",
+      "Enter an age between 10 and 120!",
       "age_image",
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/cc/age?bf_know=no&gender=${gender}&weight=${weight}&height=${height}&activity=${activity}`
     );
