@@ -39,14 +39,14 @@ export async function localImageToFrame(event, value) {
   // creating image for calculated bf
   else if (event == "bf") {
     // TODO
-    const imagePath = path.join(process.cwd(), "public/frames/bmi_result.jpg");
+    const imagePath = path.join(process.cwd(), "public/frames/bf_result.jpg");
     const buffer = fs.readFileSync(imagePath);
     const arrayBuffer = buffer.buffer.slice(buffer.byteOffset, buffer.byteOffset + buffer.byteLength);
 
     const svg = await satori(
       <body>
-        <img src={arrayBuffer} style={style.genericImage} />
-        <span style={style.totalValueStart}>{value}</span>
+        <img src={arrayBuffer} style={style.image} />
+        <span style={style.bfText}>{value}</span>
       </body>,
       {
         width: 1910,

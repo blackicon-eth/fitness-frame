@@ -82,6 +82,29 @@ export function getMetricFrame(textPlaceholder: string, image: string, post_url:
   return new NextResponse(frame);
 }
 
+export function getGenderFrame(image: string, post_url: string): NextResponse {
+  const frame = getFrameHtmlResponse({
+    buttons: [
+      {
+        label: "Start Over",
+        action: "post",
+      },
+      {
+        label: "Female",
+        action: "post",
+      },
+      {
+        label: "Male",
+        action: "post",
+      },
+    ],
+    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/frames/${image}.jpg` },
+    post_url: `${post_url}`,
+  });
+
+  return new NextResponse(frame);
+}
+
 export function getBMIFrame(calculatedBMI: string): NextResponse {
   const frame = getFrameHtmlResponse({
     buttons: [
@@ -91,6 +114,21 @@ export function getBMIFrame(calculatedBMI: string): NextResponse {
       },
     ],
     image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/api/image?event=bmi&value=${calculatedBMI}` },
+    post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/start_over`,
+  });
+
+  return new NextResponse(frame);
+}
+
+export function getBFFrame(calculatedBF: string): NextResponse {
+  const frame = getFrameHtmlResponse({
+    buttons: [
+      {
+        label: "Start Over",
+        action: "post",
+      },
+    ],
+    image: { src: `${process.env.NEXT_PUBLIC_BASE_URL}/api/image?event=bf&value=${calculatedBF}` },
     post_url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/start_over`,
   });
 

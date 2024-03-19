@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getInvalidFIDFrame, getFunFactFrame, getMetricFrame } from "@/app/lib/getFrame";
+import { getInvalidFIDFrame, getFunFactFrame, getMetricFrame, getGenderFrame } from "@/app/lib/getFrame";
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
   // Getting the user fid and validating it
@@ -28,7 +28,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   // Body Fat % Calculator
   else if (buttonId === 3) {
-    return getFunFactFrame("1");
+    return getGenderFrame("gender_image", `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bf/gender`);
   }
 
   // Fun Fact

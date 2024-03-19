@@ -13,3 +13,14 @@ export const bmiText = {
   bottom: "350",
   left: "788",
 };
+
+export const bfText = {
+  display: "flex",
+  fontFamily: "ComicSansMS",
+  fontSize: "290px",
+  textAlign: "center",
+  color: "#fff",
+  position: "absolute",
+  bottom: "330",
+  left: "750",
+};

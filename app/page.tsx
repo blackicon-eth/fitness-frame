@@ -39,11 +39,10 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const image = await localImageToFrame("bmi", "10.8");
+  const image = await localImageToFrame("bf", "15.1");
   return (
     <>
       <h1>Fitness Frame</h1>
-      <h2>{(parseFloat("65") / Math.pow(parseFloat("175") / 100, 2)).toFixed(1)}</h2>
       <img src={`data:image/jpeg;base64,${Buffer.from(image!).toString("base64")}`} alt="Fitness Frame" />
     </>
   );
