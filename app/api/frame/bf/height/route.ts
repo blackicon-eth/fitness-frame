@@ -26,7 +26,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return getMetricFrame(
       "Invalid input!",
       "height_image",
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bf/hips?gender=${gender}&waist=${waist}&neck=${neck}&hips=${hips}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bf/height?gender=${gender}&waist=${waist}&neck=${neck}&hips=${hips}`
     );
   }
 
@@ -35,7 +35,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     return getMetricFrame(
       "Enter height between 100 and 300",
       "height_image",
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bf/hips?gender=${gender}&waist=${waist}&neck=${neck}&hips=${hips}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bf/height?gender=${gender}&waist=${waist}&neck=${neck}&hips=${hips}`
     );
   }
 
