@@ -38,7 +38,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
 
   // Next
   return getMetricFrame(
-    "What's your neck circumference? (Cm)",
+    "What's your neck circumf.? (Cm)",
     "neck_image",
     `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bf/neck?gender=${gender}&waist=${inputText}`
   );

@@ -50,7 +50,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   // Female
   else {
     return getMetricFrame(
-      "What's your hips circumference? (Cm)",
+      "What's your hips circumf.? (Cm)",
       "hips_image",
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bf/hips?gender=${gender}&waist=${waist}&neck=${inputText}`
     );
