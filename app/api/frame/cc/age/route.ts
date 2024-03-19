@@ -33,13 +33,13 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   // Next
   // Activity level multiplier
   const activityMultiplier =
-    parseInt(inputText) == 1
+    parseInt(activity) == 1
       ? 1.2
-      : parseInt(inputText) == 2
+      : parseInt(activity) == 2
       ? 1.35
-      : parseInt(inputText) == 3
+      : parseInt(activity) == 3
       ? 1.5
-      : parseInt(inputText) == 4
+      : parseInt(activity) == 4
       ? 1.65
       : 1.8;
 
