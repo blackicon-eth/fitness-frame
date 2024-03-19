@@ -16,7 +16,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   // Female
   else if (buttonId === 2) {
     return getMetricFrame(
-      "What's your waist circumference? (Cm)",
+      "What's your waist circumf.? (Cm)",
       "waist_image",
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bf/waist?gender=female`
     );
@@ -25,7 +25,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   // Male
   else {
     return getMetricFrame(
-      "What's your waist circumference? (Cm)",
+      "What's your waist circumf.? (Cm)",
       "waist_image",
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/bf/waist?gender=male`
     );
