@@ -21,8 +21,8 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
   // Body Fat % known
   else {
     return getMetricFrame(
-      "What's your body weight? (Kg)",
-      "weight_image",
+      "What's your body fat %? (1-70)",
+      "bf_perc_image",
       `${process.env.NEXT_PUBLIC_BASE_URL}/api/frame/cc/bf?bf_know=yes`
     );
   }
