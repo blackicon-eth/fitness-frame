@@ -43,7 +43,7 @@ export default async function Page() {
   return (
     <>
       <h1>Fitness Frame</h1>
-      <img src={`data:image/jpeg;base64,${Buffer.from(image!).toString("base64")}`} alt="Fitness Frame" />
+      {/*<img src={`data:image/jpeg;base64,${Buffer.from(image!).toString("base64")}`} alt="Fitness Frame" />*/}
     </>
   );
 }
