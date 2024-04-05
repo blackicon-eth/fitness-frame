@@ -1,6 +1,5 @@
 import { getFrameMetadata } from "@coinbase/onchainkit";
 import type { Metadata } from "next";
-import { localImageToFrame } from "./lib/generateImage";
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -39,11 +38,9 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const image = await localImageToFrame("cc", "2500");
   return (
     <>
       <h1>Fitness Frame</h1>
-      {/*<img src={`data:image/jpeg;base64,${Buffer.from(image!).toString("base64")}`} alt="Fitness Frame" />*/}
     </>
   );
 }
